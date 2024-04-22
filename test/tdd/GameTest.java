@@ -16,9 +16,22 @@ public class GameTest {
 	}
 	
 	@Test
-	void test_aucune_quille() {
+	void test_vide() {
+		assertEquals(0, game.score());
+	}
+	
+	@Test
+	void test_20_0() {
 		for (int i = 0 ; i<20;i++)
 			game.roll(0);
 		assertEquals(0, game.score());
 	}
+	
+	@Test
+	void test_20_1() {
+		for (int i = 0 ; i<20;i++)
+			game.roll(1);
+		assertEquals(20, game.score());
+	}
+	
 }
